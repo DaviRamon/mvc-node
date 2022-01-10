@@ -3,7 +3,7 @@ const exphbs = require('express-handlebars')
 const app = express()
 const conn = require('./db/conn')
 const Task = require('./models/Task')
-const taskRoutes = require('./routes/TaskRoutes')
+const tasksRoutes = require('./routes/TasksRoutes')
 
 app.engine('handlebars', exphbs.engine())
 app.set('view engine', 'handlebars')
@@ -17,7 +17,7 @@ app.use(
 app.use(express.json())
 
 app.use(express.static('public')) // arquivos estáticos
-app.use('/tasks', taskRoutes) // chama as rotas 
+app.use('/tasks', tasksRoutes) // chama as rotas 
 
 
 
